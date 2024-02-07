@@ -1,4 +1,4 @@
-.job-app{
+.job-app {
     display: flex;
     gap: 10px;
     padding: 20px;
@@ -8,7 +8,7 @@
     flex-direction: row;
     align-items: stretch;
 }
-.jobs-title{
+.jobs-title {
     /* position: fixed; */
     position: sticky;
     display: flex;
@@ -25,46 +25,47 @@
     align-items: stretch;
 }
 
-.jobs-title:hover{
-    cursor:default !important;
+.jobs-title:hover {
+    cursor: default !important;
     background-color: #144e8b !important;
 }
-.job-app>:last-child{
+.job-app > :last-child {
     flex: 5;
-
 }
-.job-app>div{
+.job-app > select {
+    flex: 1;
+}
+.job-app > div {
     flex: 1;
 }
 
-
-.job-app-odd{
+.job-app-odd {
     background-color: #0065d0;
 }
-.job-app.selected{
-    background-color:#17a2b8;
+.job-app.selected {
+    background-color: #17a2b8;
 }
-.job-app:hover{
+.job-app:hover {
     /* cursor: pointer; */
     background-color: #6c757d;
 }
-.job-app select{
+.job-app select {
     /* width: 90%; */
     /* padding: 8px; */
     /* margin-top: 5px; */
     background-color: #00000000;
     /* margin-bottom: 10px; */
     color: #ffffff;
-    border: none !important; 
+    border: none !important;
     /* border-radius: 4px; */
 }
-.job-app option{
+.job-app option {
     /* width: 90%; */
     /* padding: 8px; */
     /* margin-top: 5px; */
     background-color: #00000000;
     /* margin-bottom: 10px; */
     color: #000000;
-    border: none !important; 
+    border: none !important;
     /* border-radius: 4px; */
 }
