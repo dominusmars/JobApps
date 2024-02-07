@@ -8,8 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-
+    z-index: 900;
 }
 
 .modal-content {
@@ -17,7 +16,8 @@
     padding: 20px 20px 20px 20px;
     border-radius: 5px;
     margin: 10px;
-    box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.75);
+    z-index: 991;
+    box-shadow: 0px 0px 21px 6px rgba(0, 0, 0, 0.75);
     width: 400px; /* Adjust the width as needed */
 }
 

@@ -16,7 +16,6 @@ application.post("/create", async (req, res) => {
 });
 application.post("/delete", async (req, res) => {
     let ids = req.body;
-    console.log(ids);
     if (typeof ids !== "object") {
         res.json({ error: "Unable to get IDs" });
         return;
