@@ -1,0 +1,70 @@
+.job-app{
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background-color: #007bff;
+    transition: all 0.2s ease;
+    /* width: 100%; */
+    flex-direction: row;
+    align-items: stretch;
+}
+.jobs-title{
+    /* position: fixed; */
+    position: sticky;
+    display: flex;
+    z-index: 1;
+    gap: 10px;
+    padding: 20px;
+    background-color: #144e8b;
+    /* transition: all 0.4s ease; */
+    /* right: 0;
+    left: 0; */
+    top: 0px;
+
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.jobs-title:hover{
+    cursor:default !important;
+    background-color: #144e8b !important;
+}
+.job-app>:last-child{
+    flex: 5;
+
+}
+.job-app>div{
+    flex: 1;
+}
+
+
+.job-app-odd{
+    background-color: #0065d0;
+}
+.job-app.selected{
+    background-color:#17a2b8;
+}
+.job-app:hover{
+    /* cursor: pointer; */
+    background-color: #6c757d;
+}
+.job-app select{
+    /* width: 90%; */
+    /* padding: 8px; */
+    /* margin-top: 5px; */
+    background-color: #00000000;
+    /* margin-bottom: 10px; */
+    color: #ffffff;
+    border: none !important; 
+    /* border-radius: 4px; */
+}
+.job-app option{
+    /* width: 90%; */
+    /* padding: 8px; */
+    /* margin-top: 5px; */
+    background-color: #00000000;
+    /* margin-bottom: 10px; */
+    color: #000000;
+    border: none !important; 
+    /* border-radius: 4px; */
+}

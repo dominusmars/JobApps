@@ -1,0 +1,24 @@
+.App {
+    /* position: fixed; */
+    text-align: center;
+    padding: 2em;
+    color: #ffffff;
+}
+.job-app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: fit-content; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+/* 
+Background Color: #222222
+Text Color: #ffffff
+Primary Color: #007bff (Blue)
+Secondary Color: #dc3545 (Red)
+Accent Color: #17a2b8 (Cyan)
+Neutral Color: #6c757d (Gray)
+Success Color: #28a745 (Green)
+Warning Color: #ffc107 (Yellow)
+Error Color: #dc3545 (Red)
+Info Color: #17a2b8 (Cyan) */
