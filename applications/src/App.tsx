@@ -11,31 +11,35 @@ function App() {
     const [Applications, setApplications]: [application[], Dispatch<SetStateAction<application[]>>] = useState([] as application[]);
     const [FilteredApplications, setFilteredApplications]: [application[], Dispatch<SetStateAction<application[]>>] = useState([] as application[]);
     const [AddModel, setAddModel] = useState(false);
-    const [Clip, setClip]:[boolean | string, Dispatch<SetStateAction<boolean | string>>] = useState(false as boolean |string);
-    const [AppId, setAppId]:[string[] | string, Dispatch<SetStateAction<string[] | string>>] = useState("" as string[] | string);
+    const [Clip, setClip]: [boolean | string, Dispatch<SetStateAction<boolean | string>>] = useState(false as boolean | string);
+    const [AppId, setAppId]: [string[] | string, Dispatch<SetStateAction<string[] | string>>] = useState("" as string[] | string);
     const [AltKey, setAltKey] = useState(false);
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-        console.log(event)
-        if (event.key === 'Alt') {
-           !AltKey && setAltKey(true);
-        }
-      };
-    
-      const handleKeyUp = (event: KeyboardEvent) => {
-        if (event.key === 'Alt') {
-            !!AltKey && setAltKey(false);
-        }
-      };
-    
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            console.log("Down");
+            if (event.key === "Alt") {
+                !AltKey && setAltKey(true);
+            }
+        };
+
+        const handleKeyUp = (event: KeyboardEvent) => {
+            console.log("Up");
+
+            if (event.key === "Alt") {
+                !!AltKey && setAltKey(false);
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("keyup", handleKeyUp);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("keyup", handleKeyUp);
+        };
+    }, [AltKey]);
     useEffect(() => {
         getApplications();
-        window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('keyup', handleKeyUp);
-        return () => {
-          window.removeEventListener('keydown', handleKeyDown);
-          window.removeEventListener('keyup', handleKeyUp);
-        };
     }, []);
     async function getApplications() {
         let apps = await axios.get("/applications");
@@ -48,7 +52,8 @@ function App() {
 
     async function delApp() {
         if (AppId === "") return;
-        await axios.post("/applications/delete/" + AppId);
+        if (typeof AppId === "string") await axios.post("/applications/delete/" + AppId);
+        else await axios.post("/applications/delete", AppId);
         await getApplications();
     }
     async function addApp(value: applicationRequest) {
@@ -68,12 +73,12 @@ function App() {
         await getApplications();
     }
 
-    async function selectAppID(appID:string){
-        console.log(AltKey)
-        if(AltKey){
-            if(typeof appID === 'string') setAppId([appID])
-            else setAppId([...AppId, appID])
-        }else setAppId(appID)
+    async function selectAppID(appID: string) {
+        console.log(AltKey);
+        if (AltKey) {
+            if (typeof AppId === "string") setAppId([appID]);
+            else setAppId([...AppId, appID]);
+        } else setAppId(appID);
     }
 
     return (
@@ -86,7 +91,7 @@ function App() {
                     onSubmit={addApp}
                 />
             )}
-            {Clip && <ClipboardNotification message={typeof Clip === 'string' ? Clip: "Unknown"} setIsVisible={setClip} />}
+            {Clip && <ClipboardNotification message={typeof Clip === "string" ? Clip : "Unknown"} setIsVisible={setClip} />}
             <div className="header">
                 <h1>Job Applications</h1>
                 <TaskBar
