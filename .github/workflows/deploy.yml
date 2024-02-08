@@ -19,5 +19,8 @@ jobs:
             - name: Build
               run: npm run build:all
 
+            - name: Stop applications
+              run: pm2 stop 'JobApps' || true
+
             - name: Start production server
               run: pm2 start 'npm run deploy' --name 'JobApps'
