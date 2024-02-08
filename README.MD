@@ -2,6 +2,10 @@
 
 Apps Organizer is a web application built using React and Express that helps users organize their job applications by allowing them to add and update the status of each application as it progresses through the hiring process.
 
+### Purpose
+
+The genesis of this project stemmed from my desire to move away from the conventional method of tracking job applications using Google Sheets. With this application, I aimed to craft an organized repository documenting all my job applications alongside their respective statuses. While much of the data entry is manual, the interface allows for flexible editing of fields, enhancing the overall user experience.
+
 ### Features
 
 -   Add new job applications with details such as company name, position, application date, etc.
