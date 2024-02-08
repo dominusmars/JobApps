@@ -10,55 +10,55 @@ function TaskBar({
 }: {
     AppId: string[] | string;
     OpenApp: () => void;
-    delApp: ()=>Promise<void>
+    delApp: () => Promise<void>;
     Applications: application[];
     setApplications: Dispatch<React.SetStateAction<application[]>>;
 }) {
     const [filter, setFilter] = useState({
         jobType: "all",
         status: "all",
-        company:"all",
-        location: "all"
+        company: "all",
+        location: "all",
     });
 
-    useEffect(()=>{
-        setApplications(Applications.filter(app =>
-            (filter.jobType === 'all' || app.job_type === filter.jobType) &&
-            (filter.status === 'all' || app.status === filter.status) &&
-            (filter.company === 'all' || app.company.toLowerCase() === filter.company) &&
-            (filter.location === 'all' || app.location.toLowerCase() === filter.location)
+    useEffect(() => {
+        setApplications(
+            Applications.filter(
+                (app) =>
+                    (filter.jobType === "all" || app.job_type === filter.jobType) &&
+                    (filter.status === "all" || app.status === filter.status) &&
+                    (filter.company === "all" || app.company.toLowerCase() === filter.company) &&
+                    (filter.location === "all" || app.location.toLowerCase() === filter.location)
+            )
+        );
+    }, [Applications, filter, setApplications]);
 
-
-        ))
-    }, [Applications, filter, setApplications])
-
-
-    
     const handleFilterChange = (e: any) => {
         const { name, value } = e.target;
-        let currFilter = { ...filter, [name]: value }
-       
-        setFilter(currFilter);
+        let currFilter = { ...filter, [name]: value };
 
+        setFilter(currFilter);
     };
 
-
-    let companyList = Array.from(new Set(Applications.map(app => app.company)))
-    let locationList = Array.from(new Set(Applications.map(app => app.location)))
-
+    let companyList = Array.from(new Set(Applications.map((app) => app.company)));
+    let locationList = Array.from(new Set(Applications.map((app) => app.location)));
 
     return (
         <div className="Task-Bar-Container">
             {/* <div className="Task-button">Select All Job App</div> */}
-            <div className="Task-button Task-add-button"onClick={()=>OpenApp()}>Add Job App</div>
-            <div className="Task-button Task-del-button" onClick={()=>delApp()}>Del Job App</div>
+            <div className="Task-button Task-add-button" onClick={() => OpenApp()}>
+                Add Job App
+            </div>
+            <div className="Task-button Task-del-button" onClick={() => delApp()}>
+                Del Job App
+            </div>
             <div className="Task-Filter">
                 <label>
                     Filter by Location:
                     <select name="location" value={filter.location} onChange={handleFilterChange}>
                         <option value="all">All</option>
-                        {locationList.map((v)=> {
-                            return  <option value={v.toLowerCase()}>{v}</option>
+                        {locationList.map((v) => {
+                            return <option value={v.toLowerCase()}>{v}</option>;
                         })}
                     </select>
                 </label>
@@ -68,8 +68,8 @@ function TaskBar({
                     Filter by Company:
                     <select name="company" value={filter.company} onChange={handleFilterChange}>
                         <option value="all">All</option>
-                        {companyList.map((v)=> {
-                            return  <option value={v.toLowerCase()}>{v}</option>
+                        {companyList.map((v) => {
+                            return <option value={v.toLowerCase()}>{v}</option>;
                         })}
                     </select>
                 </label>

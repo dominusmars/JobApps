@@ -13,7 +13,7 @@ function JobApp({
     updateAppValue,
 }: {
     app: application;
-    selectApp: (appid:string) => Promise<void>;
+    selectApp: (appid: string) => Promise<void>;
     selected: string[] | string;
     clipboardNotification: Dispatch<React.SetStateAction<string | boolean>>;
     index: number;
@@ -49,11 +49,10 @@ function JobApp({
     }
     function copyToClip(value: string) {
         navigator.clipboard.writeText(value);
-        clipboardNotification("Copied")
+        clipboardNotification("Copied");
     }
 
-
-    return (    
+    return (
         <div
             className={"job-app " + (selected === app.id || selected?.includes(app.id) ? "selected" : "") + (index % 2 === 0 ? "" : " job-app-odd")}
             onClick={() => {
