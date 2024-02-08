@@ -11,7 +11,8 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-
+              with:
+                  clean: false
             - name: Install dependencies
               run: npm run install:all
 
