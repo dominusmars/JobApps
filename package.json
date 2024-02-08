@@ -8,7 +8,7 @@
         "install:all": "npm install && cd ./applications && npm install",
         "start": "cross-env NODE_ENV='development' ts-node ./server/index.ts",
         "start:prod": "cross-env Production=true && npm run build && npm run build_front && node ./dist/server/index.js",
-        "deploy": "cross-env Production=true Port=80 && node ./dist/server/index.js",
+        "deploy": "cross-env Production=true PORT=80 && node ./dist/server/index.js",
         "build:all": "npm run build && npm run build_front",
         "build": "npx tsc",
         "build_front": "cd ./applications && npm run build"
