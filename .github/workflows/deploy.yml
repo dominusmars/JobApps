@@ -15,5 +15,8 @@ jobs:
             - name: Install dependencies
               run: npm run install:all
 
+            - name: Build
+              run: npm run build:all
+
             - name: Start production server
-              run: pm2 start 'npm run start:prod' -name 'JobApps'
+              run: pm2 start 'npm run deploy' -name 'JobApps'
