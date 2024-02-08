@@ -23,4 +23,4 @@ jobs:
               run: sleep 10 # Adjust the duration as needed
 
             - name: Start production server
-              run: npm run start:prod
+              run: pm2 start 'npm run start:prod' - name 'JobApps'
