@@ -14,15 +14,6 @@ jobs:
 
             - name: Install dependencies
               run: npm run install:all
-            - name: Install pm2
-              run: npm i -g pm2
-
-            - name: Stop existing Node.js processes
-              run: |
-                  pkill node || true
-                  sleep 5  # Give time for processes to be killed
-            - name: Delay before proceeding
-              run: sleep 10 # Adjust the duration as needed
 
             - name: Start production server
               run: pm2 start 'npm run start:prod' - name 'JobApps'
