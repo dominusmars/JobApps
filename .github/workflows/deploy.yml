@@ -16,4 +16,4 @@ jobs:
               run: npm run install:all
 
             - name: Start production server
-              run: pm2 start 'npm run start:prod' - name 'JobApps'
+              run: pm2 start 'npm run start:prod' -name 'JobApps'
