@@ -19,7 +19,7 @@ Apps Organizer is a web application built using React and Express that helps use
 
 1. Clone the repository:
     ```
-    git clone https://github.com/dominusmars/apps-organizer.git
+    git clone https://github.com/dominusmars/JobApps.git
     ```
 2. Navigate to the project directory:
     ```
@@ -33,7 +33,7 @@ Apps Organizer is a web application built using React and Express that helps use
     ```
     npm run start:prod
     ```
-5. Open your web browser and navigate to `http://localhost:3000` to access the application.
+5. Open your web browser and navigate to `http://localhost:3001` to access the application.
 
 ### Screenshots
 
