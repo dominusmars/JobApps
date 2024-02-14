@@ -1,4 +1,4 @@
-.Task-Bar-Container{
+.Task-Bar-Container {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -16,33 +16,37 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-  }
-  
-  .Task-button:hover {
+}
+
+.Task-button:hover {
     background-color: #555; /* Darker background color on hover */
-  }
-  
-  .Task-add-button {
+}
+
+.Task-button:active {
+    background-color: #3f3f3f; /* Darker background color on hover */
+}
+
+.Task-add-button {
     background-color: #007bff; /* Blue color for add button */
-  }
-  
-  .Task-del-button {
+}
+
+.Task-del-button {
     background-color: #dc3545; /* Red color for delete button */
-  }
-  
-  .Task-Filter {
+}
+
+.Task-Filter {
     /* display: flex; */
     /* gap: 10px; */
-  }
-  
-  .Task-Filter label {
+}
+
+.Task-Filter label {
     display: block;
     font-size: 16px;
-    padding-right:5px ;
+    padding-right: 5px;
     margin-bottom: 5px;
-  }
-  
-  .Task-Filter select {
+}
+
+.Task-Filter select {
     /* padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -55,9 +59,9 @@
     border: 1px solid #6c757d; /* Neutral Color */
     border-radius: 4px;
     /* width: 200px; Adjust width as needed */
-  }
-  
-  /* Style the options */
-  .Task-Filter select option {
+}
+
+/* Style the options */
+.Task-Filter select option {
     font-size: 16px;
-  }
+}

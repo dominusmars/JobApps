@@ -69,3 +69,9 @@
     border: none !important;
     /* border-radius: 4px; */
 }
+.job-app input {
+    background-color: rgb(29, 29, 34);
+    border: none;
+    padding: 0px;
+    color: white;
+}

@@ -1,6 +1,7 @@
 import React, { Dispatch, useEffect, useState } from "react";
 import "./TaskBar.css";
 import { application } from "../database/datatypes";
+import { Link } from "react-router-dom";
 function TaskBar({
     AppId,
     OpenApp,
@@ -52,6 +53,7 @@ function TaskBar({
             <div className="Task-button Task-del-button" onClick={() => delApp()}>
                 Del Job App
             </div>
+
             <div className="Task-Filter">
                 <label>
                     Filter by Location:
@@ -99,6 +101,9 @@ function TaskBar({
                     </select>
                 </label>
             </div>
+            <Link to="/roles" className="Task-button">
+                Roles
+            </Link>
         </div>
     );
 }

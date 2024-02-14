@@ -1,7 +1,7 @@
 import React, { Dispatch, useState } from "react";
 import { application } from "../database/datatypes";
 import "./JobApp.css";
-import SmallInput from "./SmallInput";
+import SmallInput from "./misc/SmallInput";
 
 function JobApp({
     app,
@@ -47,8 +47,8 @@ function JobApp({
 
         return mmddyyyyFormat;
     }
-    function copyToClip(value: string) {
-        navigator.clipboard.writeText(value);
+    async function copyToClip(value: string) {
+        await navigator.clipboard.writeText(value);
         clipboardNotification("Copied");
     }
 
@@ -68,7 +68,7 @@ function JobApp({
                     onDoubleClick={() => {
                         setInputElement("url");
                     }}
-                    onClick={() => copyToClip(app.url)}
+                    onClick={async () => copyToClip(app.url)}
                 >
                     {app.url}
                 </div>
@@ -80,7 +80,7 @@ function JobApp({
                     onDoubleClick={() => {
                         setInputElement("username");
                     }}
-                    onClick={() => copyToClip(app.username)}
+                    onClick={async () => copyToClip(app.username)}
                 >
                     {app.username}
                 </div>
@@ -92,7 +92,7 @@ function JobApp({
                     onDoubleClick={() => {
                         setInputElement("password");
                     }}
-                    onClick={() => copyToClip(app.password)}
+                    onClick={async () => copyToClip(app.password)}
                 >
                     {app.password}
                 </div>

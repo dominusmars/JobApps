@@ -1,0 +1,38 @@
+.Roles {
+    text-align: center;
+    padding: 2em;
+    color: #ffffff;
+}
+.role-container {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.add-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add-container .button {
+    background-color: #17a2b8;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    font-size: 50px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.add-container .button:hover {
+    background-color: #138192;
+}
+.add-container .button:active {
+    background-color: #0a4952;
+}
