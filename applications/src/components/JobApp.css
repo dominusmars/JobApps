@@ -7,6 +7,7 @@
     /* width: 100%; */
     flex-direction: row;
     align-items: stretch;
+    overflow-wrap: anywhere;
 }
 .jobs-title {
     /* position: fixed; */
@@ -31,6 +32,9 @@
 }
 .job-app > :last-child {
     flex: 5;
+}
+.job-app .url {
+    flex: 2;
 }
 .job-app > select {
     flex: 1;

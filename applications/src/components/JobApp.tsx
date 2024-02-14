@@ -65,6 +65,7 @@ function JobApp({
             <div>{app.location}</div>
             {InputElement !== "url" ? (
                 <div
+                    className="url"
                     onDoubleClick={() => {
                         setInputElement("url");
                     }}

@@ -102,22 +102,23 @@ function Home() {
                 />
             </div>
 
-            <div className="job-app-container">
-                <div className={"job-app jobs-title"}>
+            <section className="job-app-container">
+                <header className={"job-app jobs-title"}>
                     <div>Company</div>
                     <div>Position</div>
                     <div>Job Type</div>
                     <div>Location</div>
-                    <div>Url</div>
+                    <div className="url">Url</div>
                     <div>Username</div>
                     <div>Password</div>
                     <div>Status</div>
                     <div>Date Expired</div>
                     <div>Description</div>
-                </div>
+                </header>
                 {FilteredApplications.map((value, k) => {
                     return (
                         <JobApp
+                            key={k}
                             app={value}
                             clipboardNotification={setClip}
                             selectApp={selectAppID}
@@ -128,7 +129,7 @@ function Home() {
                         />
                     );
                 })}
-            </div>
+            </section>
         </div>
     );
 }
