@@ -47,8 +47,26 @@ function JobApp({
 
         return mmddyyyyFormat;
     }
+    const unsecuredCopyToClipboard = (text: string) => {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand("copy");
+        } catch (err) {
+            console.error("Unable to copy to clipboard", err);
+        }
+        document.body.removeChild(textArea);
+    };
+
     async function copyToClip(value: string) {
-        await navigator.clipboard.writeText(value);
+        if (window.isSecureContext && navigator.clipboard) {
+            await navigator.clipboard.writeText(value);
+        } else {
+            unsecuredCopyToClipboard(value);
+        }
         clipboardNotification("Copied");
     }
 
