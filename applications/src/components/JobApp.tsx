@@ -21,6 +21,7 @@ function JobApp({
     updateAppValue(appid: string, name: string, value: string): Promise<void>;
 }) {
     const [InputElement, setInputElement] = useState("");
+    const [PasswordBlack, setPasswordBlack] = useState(true);
     async function handleStatusChange(e: React.ChangeEvent<HTMLSelectElement>) {
         e.preventDefault();
         const { value } = e.target;
@@ -111,9 +112,15 @@ function JobApp({
                     onDoubleClick={() => {
                         setInputElement("password");
                     }}
+                    onMouseEnter={() => {
+                        setPasswordBlack(false);
+                    }}
+                    onMouseLeave={() => {
+                        setPasswordBlack(true);
+                    }}
                     onClick={async () => copyToClip(app.password)}
                 >
-                    {app.password}
+                    {(!PasswordBlack && app.password) || "******"}
                 </div>
             ) : (
                 <SmallInput submit={updateApp} onClose={async () => setInputElement("")} />
